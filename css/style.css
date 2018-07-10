@@ -1,0 +1,272 @@
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html{
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+p{font-size: 22px;
+}
+h1{
+  font-size: 45px;
+}
+
+h3{
+  font-size: 25px;
+}
+
+.nav1 {
+  position: sticky;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: rgba( 0, 0, 0, 0.87);
+  height: 90px;
+  width: 100%;
+  box-shadow: 2px 13px 15px -2px rgba(0,0,0,0.9);
+  z-index: 100;
+}
+
+
+.nav1 img {
+  height:82px;
+  width: 129px ;
+
+}
+
+.nav2 {
+  position: sticky;
+  list-style-type: none;
+  overflow: hidden;
+  background-color: rgba( 0, 0, 0, 0.87);
+  height: 90px;
+  width: 100%;
+  box-shadow: 2px 13px 15px -2px rgba(0,0,0,0.9);
+  z-index: 100;
+}
+
+
+.nav2 li p{
+  display: block;
+  float: right;
+  line-height: 90px;
+
+}
+
+.nav2 img {
+  display: block;
+  float: left;
+  height:82px;
+  width: 129px ;
+
+}
+
+.nav2 button {
+  float: right;
+  font-family: 'Roboto', sans-serif;
+  width: 196px;
+  height: 50px;
+  border-radius: 15px;
+  border-style: none;
+  font-size: 22px;
+  color: white;
+  background-color: #0973E7;
+  margin: 20px 25px 0 40px;
+}
+
+.inscription{
+  height: 800px;
+  background-image: url("../img/retour.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.inscription .cadre{
+  margin-right: 40px;
+  height: 670px;
+  width: 640px;
+  background-color: #202020;
+  border: 6px solid #0973E7;
+  border-radius: 37px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+ .formu{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+}
+
+.formu input[type="text"], input[type="mail"], input[type="password"]{
+  font-family: 'Roboto', sans-serif;
+  width: 480px;
+  font-size: 32px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  border-style: none none solid none;
+}
+
+.formu ::placeholder{
+  opacity: 1;
+}
+
+.formu label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+}
+
+.formu a{
+  font-size: 30px;
+  color: white;
+}
+.formu .center{
+  display: flex;
+  justify-content: center;
+}
+.formu input[type="submit"]{
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  width: 220px;
+  height: 70px;
+  border-radius: 29px;
+  border-style: none;
+  font-size: 30px;
+  color: white;
+  background-color: #0973E7;
+  box-shadow: 8px 6px 5px 0px rgba(0,0,0,0.75);
+}
+
+/* ACCUEIL SECTION 1 */
+.accueil .interface{
+  height: 640px;
+  width: 100%;
+  background-color: #212121;
+
+
+}
+.accueil .description h1{
+  padding: 45px 0 25px 75px;
+}
+
+.accueil .description h1{
+  padding: 45px 0 25px 75px;
+}
+
+.accueil .description #txt{
+  padding: 0px 0 80px 140px;
+}
+.accueil .description{
+  width: 1060px;
+
+}
+
+
+.accueil .button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
+
+.accueil .button button{
+  height: 137px;
+  width: 357px;
+  border-radius: 35px;
+  border-style: none;
+  font-size: 26px;
+  color: white;
+  background-color: #0973E7;
+}
+.accueil .button h3{
+  line-height: 137px;
+  margin: 0 27px 0
+}
+
+/* ACCUEIL SECTION 2 */
+
+.accueil .icono {
+  height: 240px;
+  background-color: #001E3E;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: black;
+  box-shadow: 2px -18px 15px -2px rgba(0,0,0,0.9);
+  z-index: 100;
+}
+
+/* ACCUEIL SECTION 3 */
+
+.accueil .help{
+  width: 100%;
+  height: 790px;
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+}
+
+  .accueil .contact{
+     wid
+  }
+.accueil .row{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+}
+
+/*  connexion */
+.connexion{
+  width:100%;
+  height: 800px;
+  background-image: url("../img/termin.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.connexion .cadre{
+  margin-left: 80px;
+  height: 570px;
+  width: 640px;
+  background-color: #202020;
+  border: 6px solid #0973E7;
+  border-radius: 37px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+/* FOOTER */
+
+.foot{
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba( 0, 0, 0, 0.87);
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.foot .coucou{
+  width: 450px;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
