@@ -207,20 +207,60 @@ h3{
 
 .accueil .help{
   width: 100%;
-  height: 790px;
+  height: 750px;
   background-color: #212121;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
-  .accueil .contact{
-     wid
-  }
+.accueil .contact{
+     width: 100%;
+ }
 .accueil .row{
  display: flex;
  flex-direction: row;
  justify-content: space-around;
+ padding-bottom: 40px;
 }
+
+.accueil .contact input[type="text"], input[type="mail"], input[type="tel"]{
+  width: 360px;
+  font-size: 22px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+  border-style: none none solid none;
+}
+
+.accueil .contact textarea{
+  font-family: 'Roboto', sans-serif;
+  width: 1280px;
+  height: 280px;
+  font-size: 22px;
+  cursor: pointer;
+  background: transparent;
+  color: white;
+}
+
+.accueil .contact h1{
+  padding: 40px 0 40px 0;
+}
+
+.accueil .contact input[type="submit"]{
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  height: 65px;
+  border-radius: 22px;
+  border-style: none;
+  font-size: 30px;
+  color: white;
+  background-color: #0973E7;
+  box-shadow: 8px 6px 5px 0px rgba(0,0,0,0.75);
+
+}
+
+
 
 /*  connexion */
 .connexion{
@@ -246,8 +286,59 @@ h3{
   justify-content: center;
   text-align: center;
 }
+/* Detail */
+  .detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    background-color: #212121;
+  }
+  .detail .info{
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+  }
+  .detail .img{
+    width: 340px;
+    display: flex;
+    justify-content: flex-start;
+  }
 
+  .detail .img img{
+    width:290px;
+    height: 400px;
+  }
+  .detail .infor{
+    text-align: left;
+  }
+  .detail .infor h3{
+    margin-bottom: 45px;
+  }
 
+  .detail .syno{
+    width: 1600px;
+    display: flex;
+    margin: 45px 0 45px 0;
+
+  }
+  .detail .Synop{
+    width: 220px;
+    text-align: left;
+  }
+
+  .detail .txtSyno{
+
+    display:flex;
+    text-align: left;
+    width: 1480px;
+  }
+  .detail .bande video{
+    width: 1060px;
+    margin: 45px 0 45px 0;
+
+  }
 
 /* FOOTER */
 
@@ -261,6 +352,7 @@ h3{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 2px -18px 15px -2px rgba(0,0,0,0.9);
 }
 .foot .coucou{
   width: 450px;

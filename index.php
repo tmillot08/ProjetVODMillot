@@ -53,13 +53,17 @@
       <form class="contact" action="index.html" method="post">
         <h1>Nous contactez</h1>
         <div class="row">
-          <input type="text" name="" value="" placeholder="Votre Nom">
-          <input type="text" name="" value="" placeholder="Votre Prenom">
+          <input type="text" name="Nom" value="" placeholder="Votre Nom">
+          <input type="text" name="Prenom" value="" placeholder="Votre Prenom">
         </div>
         <div class="row">
-          <input type="mail" name="" value="" placeholder="Adresse mail">
-          <input type="tel" name="" value="" placeholder="numero de telephone">
+          <input type="mail" name="Mail" value="" placeholder="Adresse mail">
+          <input type="tel" name="Tel" value="" placeholder="numero de telephone">
         </div>
+        <div class="row">
+          <textarea name="Msg" placeholder="Votre message ici..." rows="4" cols="70"></textarea>
+        </div>
+          <input type="submit" name="Submit" value="Envoyer">
 
       </form>
 
