@@ -9,7 +9,7 @@
   </head>
   <body>
     <header>
-      <?php include 'navaccueil.html'; ?>
+      <?php include 'php/navaccueil.html'; ?>
     </header>
     <main class="accueil">
     <section class="interface">
@@ -70,7 +70,7 @@
     </section>
     </main>
     <footer>
-      <?php  include 'footer.html'; ?>
+      <?php  include 'php/footer.html'; ?>
     </footer>
   </body>
 </html>

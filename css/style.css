@@ -3,9 +3,9 @@
 html{
   font-family: 'Roboto', sans-serif;
   color: white;
+  font-size: 22px;
 }
-p{font-size: 22px;
-}
+
 h1{
   font-size: 45px;
 }
@@ -102,7 +102,7 @@ h3{
 
 }
 
-.formu input[type="text"], input[type="mail"], input[type="password"]{
+.formu input[type="text"], .formu input[type="mail"], .formu input[type="password"]{
   font-family: 'Roboto', sans-serif;
   width: 480px;
   font-size: 32px;

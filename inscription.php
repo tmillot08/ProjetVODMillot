@@ -12,7 +12,7 @@
   </head>
   <body>
     <header>
-      <?php include 'nav.html'; ?>
+      <?php include 'php/nav.html'; ?>
     </header>
     <main class="inscription">
       <div class="cadre">
@@ -36,8 +36,6 @@
       </div>
 
     </main>
-    <footer>
-      <?php  include 'footer.html'; ?>
-    </footer>
+      <?php  include 'php/footer.html'; ?>
   </body>
 </html>
