@@ -1,3 +1,14 @@
+<?php
+session_start();
+require("php/GestionnaireChemin.php");
+GC::load();
+if(!isset($_SESSION["connect"])){
+  $_SESSION["connect"] = 0;
+}
+if($_SESSION["connect"] != 1){
+  $_SESSION["connect"] = 0;
+}
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -13,7 +24,7 @@
     </header>
     <main class="connexion">
       <div class="cadre">
-        <form class="formu" action="" method="post">
+        <form class="formu" action="log.php" method="post">
           <h1>Connexion</h1>
           <input type="mail" name="email" value="" placeholder="Adresse Mail">
           <input type="password" name="password" value="" placeholder="Mot de passe">

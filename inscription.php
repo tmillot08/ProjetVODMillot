@@ -1,3 +1,6 @@
+<?php
+  session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -13,7 +16,7 @@
     </header>
     <main class="inscription">
       <div class="cadre">
-        <form class="formu" action="" method="post">
+        <form class="formu" action="traitementInscription.php" method="post">
           <h1>S'inscrire</h1>
           <input type="mail" name="email" value="" placeholder="Votre adresse Mail">
           <input type="text" name="pseudo" value="" placeholder="Votre Pseudo">
@@ -25,7 +28,7 @@
           </div>
           <a href="connexion.php">Déja membre ? connectez-vous</a>
           <div class="center">
-          <input type="submit" name="submit" value="je m'inscrit">
+          <input type="submit" name="submit" value="je m'inscris">
           </div>
 
 
