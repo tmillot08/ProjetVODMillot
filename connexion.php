@@ -8,6 +8,7 @@ if(!isset($_SESSION["connect"])){
 if($_SESSION["connect"] != 1){
   $_SESSION["connect"] = 0;
 }
+
  ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -20,7 +21,7 @@ if($_SESSION["connect"] != 1){
   </head>
   <body>
     <header>
-      <?php include 'nav.html'; ?>
+      <?php include 'php/nav.html'; ?>
     </header>
     <main class="connexion">
       <div class="cadre">
@@ -36,6 +37,7 @@ if($_SESSION["connect"] != 1){
           <div class="center">
           <input type="submit" name="submit" value="Se connecter">
           </div>
+            <?php echo $_SESSION["msg"] ?>
 
 
         </form>
@@ -43,7 +45,7 @@ if($_SESSION["connect"] != 1){
 
     </main>
     <footer>
-      <?php  include 'footer.html'; ?>
+      <?php  include 'php/footer.html'; ?>
     </footer>
   </body>
 </html>

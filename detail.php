@@ -13,16 +13,36 @@
     </header>
     <main class="detail">
     <section class="information">
-      <h1>Ready Player One</h1>
+      <?php
+      $host_name = 'db745063132.db.1and1.com';
+      $database = 'db745063132';
+      $user_name = 'dbo745063132';
+      $password = ')Thomas016';
+
+      $dbh = null;
+      try {
+        $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
+        $film = $dbh->query("SELECT *
+          FROM Film
+
+          INNER JOIN Realise ON Film.ID_Film = Realise.ID_Film
+          INNER JOIN relation11 ON Film.ID_Film = relation11.ID_Film
+          INNER JOIN Appartient ON Film.ID_Film = Appartient.ID_Film
+          INNER JOIN Acteur ON relation11.ID_Acteur = Acteur.ID_Acteur
+          INNER JOIN Realisateur ON Realise.ID_Real = Realisateur.ID_Real
+          INNER JOIN Genre ON Appartient.ID_Genre = Genre.ID_Genre WHERE Film.ID_Film = '" . $_POST['id'] . "' ");
+          $detailfilm = $film->fetch();
+         ?>
+      <h1 class="title"> <?php  echo $detailfilm['Titre_Film']; ?></h1>
       <div class="info">
         <div class="img">
-          <img src="img/ready.jpg" alt="">
+          <img src="upload/<?php echo $detailfilm['Img_Film']; ?>" alt="">
         </div>
         <div class="infor">
-          <h3>Date de sortie: 28 mars 2018</h3>
-          <h3>Réaliser par Steven Spielberg</h3>
-          <h3>Genres: Science Fiction / Action</h3>
-          <h3>Acteurs: Tye Sheridan, Olivia Cooke, Ben Mendelson</h3>
+          <h3>Date de sortie: <?php echo $detailfilm['Date_Film']; ?></h3>
+          <h3>Réaliser par <?php echo $detailfilm['Nom_Real']; ?></h3>
+          <h3>Genres: <?php echo $detailfilm['Nom_Genre']; ?></h3>
+          <h3>Acteurs: <?php echo $detailfilm['Nom_Acteur']; ?>, Olivia Cooke, Ben Mendelson</h3>
           <h3>Langue: Français/anglais</h3>
         </div>
       </div>
@@ -32,20 +52,24 @@
         <h1>Synopsis:</h1>
       </div>
       <div class="txtSyno">
-        <h3>2045. Le monde est au bord du chaos. Les êtres humains se réfugient dans l'OASIS, univers virtuel mis au point <br>
-           par le brillant et excentrique James Halliday. Avant de disparaître, celui-ci a décidé de léguer son immense fortune <br>
-           à quiconque découvrira l'œuf de Pâques numérique qu'il a pris soin de dissimuler dans l'OASIS. L'appât du gain provoque <br>
-           une compétition planétaire. Mais lorsqu'un jeune garçon, Wade Watts, qui n'a pourtant pas le profil d'un héros, décide de <br>
-           participer à la chasse au trésor, il est plongé dans un monde parallèle à la fois mystérieux et inquiétant… </h3>
+        <h3><?php echo $detailfilm['Syno_Film']; ?></h3>
 
       </div>
     </section>
     <section class="bande">
       <h1>Bande annonce</h1>
-      <video src="./vid/Ready.mp4" controls></video>
+      <video src="./vid/<?php echo $detailfilm['Ba_Film']; ?>" controls></video>
+
 
 
     </section>
+    <?php
+  } catch (PDOException $e) {
+    echo "Erreur!: " . $e->getMessage() . "<br/>";
+    die();
+  }
+
+     ?>
 
     </main>
     <footer>

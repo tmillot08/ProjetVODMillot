@@ -5,6 +5,9 @@ html{
   color: white;
   font-size: 22px;
 }
+.fav{
+  color: yellow;
+}
 
 h1{
   font-size: 45px;
@@ -13,6 +16,8 @@ h1{
 h3{
   font-size: 25px;
 }
+
+a{text-decoration: none; color: white;}
 
 .nav1 {
   position: sticky;
@@ -41,22 +46,49 @@ h3{
   width: 100%;
   box-shadow: 2px 13px 15px -2px rgba(0,0,0,0.9);
   z-index: 100;
-}
-
-
-.nav2 li p{
-  display: block;
-  float: right;
-  line-height: 90px;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .nav2 img {
-  display: block;
-  float: left;
+  justify-content: start;
   height:82px;
   width: 129px ;
 
+}
+
+.nav2 .select{
+  width: 770px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.nav2 select{
+  height:35px;
+  width: 180px ;
+  background: transparent;
+  color: white;
+}
+
+.nav2 .button{
+  width: 990px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav2 .button1{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .nav2 button {
@@ -69,7 +101,7 @@ h3{
   font-size: 22px;
   color: white;
   background-color: #0973E7;
-  margin: 20px 25px 0 40px;
+  margin: 0 25px 0 40px;
 }
 
 .inscription{
@@ -147,7 +179,8 @@ h3{
   height: 640px;
   width: 100%;
   background-color: #212121;
-
+  display: flex;
+  flex-direction: row;
 
 }
 .accueil .description h1{
@@ -188,6 +221,29 @@ h3{
   margin: 0 27px 0
 }
 
+
+.accueil .content-carrousel {
+	width: 780px;
+  height: 640px;
+	display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.accueil .content-carrousel img{
+	width: 230px;
+	height: 330px;
+  opacity: 0.5;
+}
+
+.accueil .content-carrousel img:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+
+
 /* ACCUEIL SECTION 2 */
 
 .accueil .icono {
@@ -207,7 +263,7 @@ h3{
 
 .accueil .help{
   width: 100%;
-  height: 750px;
+  padding-bottom: 45px;
   background-color: #212121;
   display: flex;
   justify-content: center;
@@ -281,7 +337,10 @@ h3{
   width: 640px;
   background-color: #202020;
   border: 6px solid #0973E7;
-  border-radius: 37px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 22px;
+  font-size: 30px;
+  color: white;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -294,6 +353,9 @@ h3{
     text-align: center;
     width: 100%;
     background-color: #212121;
+  }
+  .detail .title{
+    margin: 45px 0 45px 0;
   }
   .detail .info{
     width: 1400px;
@@ -340,6 +402,101 @@ h3{
 
   }
 
+/* FILM */
+.film{
+  background-color: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 45px;
+
+}
+.film section {
+  margin-top: 100px;
+  width: 90%;
+}
+
+
+.film section h1{
+  width: 100%;
+  border-bottom: 5px solid white;
+  padding-bottom: 5px;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.77);
+
+}
+.film .listfilm{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: 35px;
+}
+
+.film .listfilmgenre{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-row-gap: 45px;
+  justify-content: space-between;
+}
+.film .container{
+  position: relative;
+  height: 385px;
+  width: 280px;
+}
+.film .container img{
+  opacity: 1;
+  height: 385px;
+  width: 280px;
+  box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.75);
+  transition: .5s ease;
+  position: absolute;
+}
+
+.film .container .middle
+{
+  position: absolute;
+  height: 385px;
+  width: 280px;
+  transition: .5s ease;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.film .container:hover img{
+  opacity: 0.3;
+}
+
+.film .container:hover .middle
+{
+  opacity: 1;
+}
+
+.film .titre{
+  text-align: center;
+}
+
+.film .right{
+  align-self: flex-end;
+  margin: 5px 5px 0 0;
+}
+.film .container form{
+  width: 100%
+}
+.film .container  input[type="submit"]{
+  background-color: #0973E7;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 40px;
+  border-style: none;
+  font-size: 22px;
+  color: white;
+}
+
+
+
 /* FOOTER */
 
 .foot{
@@ -361,4 +518,391 @@ h3{
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+}
+
+.admin {
+  background-color: #212121;
+}
+
+.admin .pageur{
+  width: 90% !important;
+  justify-content: center;
+}
+
+.admin .pageur_row{
+  justify-content: space-between;
+}
+@media (max-width: 1630px) {
+  h1{
+    font-size: 40px;
+
+  }
+  h3{
+    font-size: 23px;
+
+  }
+  .nav2 button{
+    display: none;
+  }
+  .accueil .content-carrousel {
+  	width: 700px;
+  }
+  .accueil .content-carrousel img{
+  	width: 200px;
+  	height: 285px;
+  }
+  .accueil .button button{
+    height: 130px;
+    width: 340px;
+    border-radius: 33px;
+  }
+  .inscription .cadre{
+    height: 650px;
+    width: 620px;
+  }
+  .formu input[type="text"], .formu input[type="mail"], .formu input[type="password"]{
+    width: 480px;
+    font-size: 30px;
+  }
+}
+@media (max-width: 1500px) {
+  h1{
+    font-size: 35px;
+
+  }
+  .inscription .cadre{
+    height: 600px;
+    width: 573px;
+  }
+  .formu input[type="text"], .formu input[type="mail"], .formu input[type="password"]{
+    width: 400px;
+    font-size: 25px;
+  }
+
+  .formu label{
+    font-size: 25px;
+  }
+
+  .formu a{
+    font-size: 25px;
+  }
+  h3{
+    font-size: 20px;
+
+  }
+  .accueil .button button{
+    height: 115px;
+    width: 300px;
+    border-radius: 30px;
+  }
+
+}
+
+@media (max-width: 1400px) {
+  .inscription .cadre{
+    height: 544px;
+    width: 520px;
+  }
+  .accueil .interface{
+    height: 500px;
+  }
+  h1{
+    font-size: 30px;
+  }
+  h3{
+    font-size: 18px;
+
+  }
+  .accueil .button button{
+    height: 95px;
+    width: 250px;
+    font-size: 20px;
+  }
+  .accueil .content-carrousel {
+  	width: 600px;
+    height: 500px;
+  }
+  .accueil .content-carrousel img{
+  	width: 170px;
+  	height: 242px;
+  }
+  .accueil .button h3{
+    line-height: 95px;
+    margin: 0 10px 0;
+  }
+
+}
+@media (max-width: 1180px) {
+  .nav2 .button{
+    width: 100%;
+  }
+  .inscription .cadre{
+    height: 480px;
+    width: 458px;
+  }
+  .formu input[type="text"], .formu input[type="mail"], .formu input[type="password"]{
+    width: 300px;
+    font-size: 20px;
+  }
+
+  .formu label{
+    font-size: 20px;
+  }
+
+  .formu a{
+    font-size: 20px;
+  }
+  .formu input[type="submit"]{
+
+    width: 180px;
+    height: 57px;
+    border-radius: 24px;
+    font-size: 22px;
+  }
+  .film section {
+    margin-top: 50px;
+
+  }
+  .film .container{
+    height: 316px;
+    width: 230px;
+  }
+  .film .container img{
+    height: 316px;
+    width: 230px;
+  }
+  .film .container .middle{
+    height: 316px;
+    width: 230px;
+  }
+
+  .fa-8x{
+    font-size: 120px;
+  }
+  .accueil .icono{
+    height: 170px;
+  }
+  h1{
+    font-size: 25px;
+  }
+  h3{
+    font-size: 16px;
+
+  }
+  .accueil .interface{
+    height: 400px;
+  }
+  .accueil .button button{
+    height: 76px;
+    width: 200px;
+    font-size: 16px;
+    border-radius: 25px;
+  }
+  .accueil .description #txt{
+    padding: 0 0 45px 45px;
+  }
+  .accueil .content-carrousel {
+  	width: 500px;
+    height: 400px;
+  }
+  .accueil .content-carrousel img{
+    width: 150px;
+    height: 213px;
+  }
+  .accueil .button h3{
+    line-height: 76px;
+
+  }
+}
+@media (max-width: 970px) {
+
+  .film .container{
+    height: 275px;
+    width: 200px;
+  }
+  .film .container img{
+    height: 275px;
+    width: 200px;
+  }
+  .film .container .middle{
+    height: 275px;
+    width: 200px;
+    font-size: 18px;
+  }
+
+  .accueil .description h1{
+    padding: 45px 0 25px 45px;
+  }
+  .accueil .content-carrousel {
+  	width: 100%;
+    height: 400px;
+  }
+  .accueil .content-carrousel .img:nth-child(3){
+    display: none;
+  }
+}
+@media (max-width: 840px) {
+
+  .film .container{
+    height: 220px;
+    width: 160px;
+  }
+  .film .container img{
+    height: 220px;
+    width: 160px;
+  }
+  .film .container .middle{
+    height: 220px;
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .fa-8x{
+    font-size: 75px;
+  }
+  .accueil .icono{
+    height: 120px;
+  }
+  h3{
+    font-size: 14px;
+
+  }
+  .accueil .content-carrousel .img:nth-child(2){
+    display: none;
+  }
+  .accueil .button{
+    justify-content: space-around;
+  }
+  .accueil .button h3{
+    display: none;
+  }
+
+  .accueil .contact input[type="text"], input[type="mail"], input[type="tel"]{
+    width: 260px;
+    font-size: 16px;
+  }
+
+  .accueil .contact textarea{
+    width: 100%;
+    font-size: 18px;
+
+  }
+
+}
+@media (max-width: 600px) {
+  .nav2 .button{
+    display: none;
+
+  }
+  .nav2 img{
+    display: none;
+  }
+  .nav2 p{
+    font-size: 20px;
+  }
+  .inscription{
+    justify-content: center;
+  }
+  .inscription .cadre{
+    margin-right: 0px;
+  }
+  .film .listfilm{
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .film .container{
+    height: 220px;
+    width: 160px;
+    margin-bottom: 20px;
+  }
+  .accueil .contact input[type="text"], input[type="mail"], input[type="tel"]{
+    width: 165px;
+    font-size: 16px;
+  }
+  .accueil .description h1{
+    padding: 45px 0 25px 20px;
+  }
+  .accueil .description #txt{
+    padding: 0 0 45px 20px;
+  }
+  .accueil .interface{
+    height: 100%;
+    padding-bottom: 30px;
+  }
+  .accueil .content-carrousel{
+    display: none;
+  }
+  .accueil .button h3{
+    display: block;
+  }
+}
+
+@media (max-width: 460px) {
+  .fa-8x{
+    font-size: 50px;
+  }
+  .nav2 button{
+    display: none;
+  }
+
+  .accueil .button button{
+    height: 57px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 20px;
+  }
+
+
+
+}
+
+@media (max-width: 400px) {
+  .nav2 p{
+    font-size: 15px;
+  }
+
+  .nav2 select{
+    width: 100px;
+  }
+  .inscription{
+    height: 600px;
+  }
+  .inscription .cadre{
+    height: 480px;
+    width: 458px;
+  }
+  .formu input[type="text"], .formu input[type="mail"], .formu input[type="password"]{
+    width: 270px;
+    font-size: 16px;
+  }
+  .formu label{
+    font-size: 16px;
+  }
+
+  .formu a{
+    font-size: 16px;
+  }
+  h1{
+    font-size: 20px;
+  }
+
+  .accueil .button h3{
+    display: none;
+  }
+  .accueil .contact input[type="text"], input[type="mail"], input[type="tel"]{
+    width: 132px;
+    font-size: 14px;
+  }
+  .accueil .contact textarea{
+    height: 150px;
+    font-size: 16px;
+
+  }
+  .accueil .contact input[type="submit"]{
+
+    width: 160px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 20px;
+  }
 }

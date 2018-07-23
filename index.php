@@ -2,7 +2,9 @@
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Connexion</title>
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MetroVod</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
@@ -21,16 +23,42 @@
           sollicitudin iaculis, risus risus maximus mi, nec cursus ex tortor vitae sapien.
         </h3>
         <div class="button">
-        <a href="inscription.php">
+        <a href="connexion.php">
          <button type="button" name="button"> Déja Membre?  <br> Connectez-vous  </button>
         </a>
           <h3> ─ ou ─</h3>
-        <a href="connexion.php">
+        <a href="inscription.php">
           <button type="button" name="button"> Créez un compte  </button>
         </a>
         </div>
 
       </div>
+		   <div class="content-carrousel">
+                   <?php
+                   $host_name = 'db745063132.db.1and1.com';
+                   $database = 'db745063132';
+                   $user_name = 'dbo745063132';
+                   $password = ')Thomas016';
+
+                   $dbh = null;
+                   try {
+                     $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
+                     $carro = $dbh->query("SELECT * FROM Film ORDER BY Date_Film DESC LIMIT 3 ");
+                     while ($carroimg = $carro->fetch()) {?>
+                        <div class="img">
+                          <img src="upload/<?php echo $carroimg['Img_Film'] ?>"/>
+                        </div>
+                      <?php
+                     }
+                      } catch (PDOException $e) {
+                     echo "Erreur!: " . $e->getMessage() . "<br/>";
+                     die();
+                      }
+
+                     ?>
+		             </div>
+	         </div>
+       </div>
     </section>
     <section class="icono">
       <div class="ico">
@@ -49,8 +77,19 @@
       </div>
     </section>
     <section class="help">
+      <?php
+        if(isset($_POST['mailsend'])){
+          $from = $_POST['Mail'];
+          $to = "thomas.millot08@gmail.com";
+          $subject = "Demande de" . $_POST['Prenom'] . "" . $_POST['Nom'];
+          $message = $_POST['Msg'];
+          $headers = "From:"  . $from;
 
-      <form class="contact" action="index.html" method="post">
+          mail($to,$subject, $message, $headers);
+          echo "Votre Email a bien été envoyé.";
+
+        } else { ?>
+      <form class="contact" action="" method="post">
         <h1>Nous contactez</h1>
         <div class="row">
           <input type="text" name="Nom" value="" placeholder="Votre Nom">
@@ -63,9 +102,13 @@
         <div class="row">
           <textarea name="Msg" placeholder="Votre message ici..." rows="4" cols="70"></textarea>
         </div>
-          <input type="submit" name="Submit" value="Envoyer">
+          <input type="submit" name="mailsend" value="Envoyer">
 
       </form>
+      <?php
+    }
+
+     ?>
 
     </section>
     </main>

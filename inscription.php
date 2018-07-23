@@ -1,5 +1,7 @@
 <?php
   session_start();
+  require("php/GestionnaireChemin.php");
+  GC::load();
  ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -30,6 +32,7 @@
           <div class="center">
           <input type="submit" name="submit" value="je m'inscris">
           </div>
+          <p> <?php echo $_SESSION["msgins"];?></p>
 
 
         </form>
